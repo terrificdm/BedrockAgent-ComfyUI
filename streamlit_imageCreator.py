@@ -135,7 +135,6 @@ if query := st.chat_input("Provide image descripiton here:"):
         st.markdown(query)
     # Display assistant response in chat message container
     with st.chat_message("assistant"):
-        message_placeholder = st.empty()
         with st.spinner('A moment please...'):
             output_data = create_image(query)
             if "view?filename=" in output_data:
@@ -150,7 +149,7 @@ if query := st.chat_input("Provide image descripiton here:"):
                             save_path = os.path.join(images_folder, image_name)
                             with open(save_path, "wb") as file:
                                 file.write(response.content)
-                                message_placeholder.image(save_path, caption=caption, output_format="JPEG")
+                                st.image(save_path, caption=caption, output_format="JPEG")
             else:
                 st.markdown(output_data)
     # Add assistant response to chat history
