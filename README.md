@@ -10,3 +10,6 @@ Based on your inputs, Bedrock will extract image description then enrich and rew
 > A default "ml.t3.medium" SageMaker notebook instance is sufficient to run the demo（excluding Comfyui env. You need to set it up first）  
 
 > Check this [repo](https://github.com/terrificdm/stable-diffusion-comfyui-ec2) to install Comfyui on an EC2 srv by AWS CDK   
+
+### How to use:     
+Import bedrock_claude_agent_comfyui.ipynb to a SageMaker notebook instance, then run it as instructions described
