@@ -87,8 +87,8 @@ with st.sidebar:
     ### **Behind the chatbot:**  
     Based on your inputs, Bedrock Claude will extract image description then enrich and rewrite it into a Stable Diffusion prompt. After that, it will automatically call Comfyui by leveraging Bedrock Agent to generate an image for you""")
     with st.expander('Comfyui Configurations', expanded=False):
-        endpoint = st.text_input('Comfyui endpoint', "")
-        workflow = st.file_uploader("Comfyui api workflow json file")
+        endpoint = st.text_input('Comfyui endpoint', "", help="Chage the default Comfyui endpoint with your own")
+        workflow = st.file_uploader("Comfyui api workflow json file", help="Replace the default Comfyui API workflow with your own")
         if endpoint or workflow:
             response = st.button("Submit", on_click=update_lambda_env, args=[endpoint, workflow])
             if response:
