@@ -1,6 +1,9 @@
 # Demo for Bedrock Agent calling Comfyui API
 
 ### Scenario:     
+
+![](images/bedrock_claude_agent_comfyui.png)
+
 Based on your inputs, Bedrock will extract image description then enrich and rewrite it into a Stable Diffusion prompt. After that, it will automatically call Comfyui by leveraging Bedrock Agent to generate an image for you  
 
 > User inputs can be any language, but eventually, a generated prompt for Stable Diffusion will be English  
