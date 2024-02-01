@@ -49,15 +49,15 @@ def update_lambda_env(endpoint, workflow):
 
     if endpoint:
         configuration['Environment']['Variables']['server_address'] = endpoint
-        session_state_parameter = 'Comfyui endpoint'
+        session_state_parameter = 'ComfyUI endpoint'
 
     if workflow:
         workflow = workflow.read().decode('utf-8')
         configuration['Environment']['Variables']['prompt_text'] = workflow
         if session_state_parameter:
-            session_state_parameter = 'Comfyui endpoint and Comfyui api workflow'
+            session_state_parameter = 'ComfyUI endpoint and ComfyUI api workflow'
         else:
-            session_state_parameter = 'Comfyui api workflow'
+            session_state_parameter = 'ComfyUI api workflow'
 
     lambda_client.update_function_configuration(**configuration)
 
@@ -85,10 +85,10 @@ with st.sidebar:
     st.title('ImageCreator Chatbot🎈')
     st.markdown("""
     ### **Behind the chatbot:**  
-    Based on your inputs, Bedrock Claude will extract image description then enrich and rewrite it into a Stable Diffusion prompt. After that, it will automatically call Comfyui by leveraging Bedrock Agent to generate an image for you""")
-    with st.expander('Comfyui Configurations', expanded=False):
-        endpoint = st.text_input('Comfyui endpoint', "", help="Chage the default Comfyui endpoint with your own")
-        workflow = st.file_uploader("Comfyui api workflow json file", help="Replace the default Comfyui API workflow with your own")
+    Based on your inputs, Bedrock Claude will extract image description then enrich and rewrite it into a Stable Diffusion prompt. After that, it will automatically call ComfyUI by leveraging Bedrock Agent to generate an image for you""")
+    with st.expander('ComfyUI Configurations', expanded=False):
+        endpoint = st.text_input('ComfyUI endpoint', "", help="Chage the default ComfyUI endpoint with your own")
+        workflow = st.file_uploader("ComfyUI API workflow json file", help="Replace the default ComfyUI API workflow with your own")
         if endpoint or workflow:
             response = st.button("Submit", on_click=update_lambda_env, args=[endpoint, workflow])
             if response:
