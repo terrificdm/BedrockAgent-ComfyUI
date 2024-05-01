@@ -17,5 +17,8 @@ Based on your inputs, Bedrock will extract image description then enrich and rew
 ### How to use:     
 Import bedrock_claude_agent_ComfyUI.ipynb to a SageMaker notebook instance, then run it as instructions described
 
+### Note:
+"bedrock_claude_agent_comfyui.ipynb" and "bedrock_claude_function_calling.ipynb" are demos for Claude Instant, "bedrock_claude-v3_agent_comfyui.ipynb" is a demo for Claude3 haiku
+
 ### Others:
 > "bedrock\_claude\_function\_calling.ipynb" is a demo for native function calling capability of Bedrock Claude
